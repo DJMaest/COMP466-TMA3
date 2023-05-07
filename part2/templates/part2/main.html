@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Slideshows</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/part2">Slideshow</a>
+        </div>
+    </nav>
+
+    <div id="slideshowHeader">
+        <h1>My Album</h1>
+        <div class="slideshow-squence">
+            <select class="my-selectbox " id="showToggle">
+                <option value="" disabled selected>Select the order (default sequential)</option>
+                <option value="sequential">Sequential</option>
+                <option value="random">Random</option>
+            </select>
+
+        </div>
+        <img style="margin-top:-45px;cursor: pointer;" id="playBtn" src="/shared/images/part2/icons/play.png"
+            alt="pause-play">
+
+    </div>
+
+    <!-- Slideshow container -->
+    <div id="slideshowContainer">
+
+        <!-- Full-width images with number and caption text -->
+        {% for image in images%}
+        <div class="mySlides my-fade">
+            <div class="numbertext">{{forloop.counter}} / 20</div>
+            <img src="{{image.path}}" style="width:100%; height:800px;" alt="{{image.caption}}">
+            <div class="text">{{image.caption}}</div>
+        </div>
+        {% endfor %}
+
+        <!-- Next and previous buttons -->
+        <a class="my-prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="my-next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <br>
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+       
+    </div>
+    <script src="{% static 'js/part2/main.js' %}"></script>
+</body>
+
+</html>

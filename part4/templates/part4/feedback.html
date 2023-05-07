@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part4/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part4/navbar.html" %}
+    <section style="background-color: #662C91;" class="py-5 text-center">
+        <h1 class="text-light">Thank You For Your Feedback!</h1>
+        <br>
+    </section>
+    <!-- /shared/images/part3/assets/laptop.png -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+
+            <p class="lead">Your feedback will be reviewed as soon as possible!</p>
+            <p class="lead">In the mean time <a href="/part3/">Explore More</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part4/main.js' %}"></script>
+</body>
+
+</html>

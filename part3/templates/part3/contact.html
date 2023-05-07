@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part3/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part3/navbar.html" %}
+    <section style="background-color: #662C91;" class="py-5 text-center">
+        <h1 class="text-light">We love to hear from you</h1>
+        <br>
+    </section>
+    <div style="margin-top:50px;" class="container text-center">
+        <h1>Reach us on our socials</h1>
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.github.com/"><i class="fab fa-github"></i></a>
+        <a href="https://www.reddit.com/"><i class="fab fa-reddit-alien"></i></a>
+        <hr>
+        <h1>Feedback</h1>
+        <form action="/part3/feedback" style="width:80%; margin:auto;">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com"  required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part3/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>TMA3</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="/">TMA3</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" rel="noopener noreferrer" aria-current="page" href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part1">Part 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part2">Part 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part3">Part 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part4">Part 4</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="text-center">
+            <h1 id="infoHeader">Assignment 3</h1>
+            <table style="margin:auto;" class="">
+                <thead></thead>
+                <tbody style="height:150px;">
+                    <tr>
+                        <td>
+                            <b>Course:</b>
+                        </td>
+                        <td>COMP 466</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Assignment:</b>
+                        </td>
+                        <td>TMA3</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Name:</b>
+                        </td>
+                        <td>Alireza Azimi</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Student ID:</b>
+                        </td>
+                        <td>3562060</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Date Began:</b>
+                        </td>
+                        <td>2022-05-09</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Date Completed:</b>
+                        </td>
+                        <td>2022-05-28</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Hours spent:</b>
+                        </td>
+                        <td>120</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <h1>Content</h1>
+        <ul>
+            <li>
+                <a href="#generalGuide">General User Guide</a>
+            </li>
+            <li>
+                <a href="#part1">Part 1</a>
+                <ul>
+                    <li>
+                        <a href="#part1-analysis">Analysis</a>
+                    </li>
+                    <li>
+                        <a href="#part1-design">Design</a>
+                    </li>
+                    <li>
+                        <a href="#part1-implementation">Implementation</a>
+                    </li>
+                    <li>
+                        <a href="#part1-userguide">User Guide</a>
+                    </li>
+                    <li>
+                        <a href="#part1-accesslink">Access Link</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#part2">Part 2</a>
+                <ul>
+                    <li>
+                        <a href="#part2-analysis">Analysis</a>
+                    </li>
+                    <li>
+                        <a href="#part2-design">Design</a>
+                    </li>
+                    <li>
+                        <a href="#part2-implementation">Implementation</a>
+                    </li>
+                    <li>
+                        <a href="#part2-userguide">User Guide</a>
+                    </li>
+                    <li>
+                        <a href="#part2-accesslink">Access Link</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#part3">Part 3</a>
+                <ul>
+                    <li>
+                        <a href="#part3-analysis">Analysis</a>
+                    </li>
+                    <li>
+                        <a href="#part3-design">Design</a>
+                    </li>
+                    <li>
+                        <a href="#part3-implementation">Implementation</a>
+                    </li>
+                    <li>
+                        <a href="#part3-userguide">User Guide</a>
+                    </li>
+                    <li>
+                        <a href="#part3-accesslink">Access Link</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#part4">Part 4</a>
+                <ul>
+                    <li>
+                        <a href="#part4-analysis">Analysis</a>
+                    </li>
+                    <li>
+                        <a href="#part4-design">Design</a>
+                    </li>
+                    <li>
+                        <a href="#part4-implementation">Implementation</a>
+                    </li>
+                    <li>
+                        <a href="#part4-userguide">User Guide</a>
+                    </li>
+                    <li>
+                        <a href="#part4-accesslink">Access Link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h1 id="generalGuide">General User Guide</h1>
+        <p>
+            Please use chrome to test the application as this was the browser used to test the application. <br>
+            This application was implemented using the Django framework. Thus you must have the latest version of python
+            installed (Python 3.10 preferrably).
+            To run the the application you must be located in the folder containing "manage.py". To run the server you
+            may run "python manage.py runserver".
+            To set a database admin you may run "python manage.py createsuperuser". To migrate the database models you
+            may run "python manage.py makemigrations && python manage.py migrate".
+            For more information on Django and additional installation and running guidelines, definitely checkout the
+            official django documentation:
+            <a href="https://docs.djangoproject.com/en/4.0/">Django Documentation</a> <br>
+            Lastly, the application is deployed onto AWS EC2 cloud service and may be accessed through <a
+                href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000">here</a>
+
+
+        </p>
+        <hr>
+        <h1 id="part1">Part 1: Cookies</h1>
+        <h3>Description</h3>
+        <p>
+            This application intends to display general user information such as Ip address, number of visits and
+            timezone.
+        </p>
+        <h3 id="part1-analysis">Analysis</h3>
+        <p>
+            Here's the breakdown and analysis of the application requirements:
+        <ul>
+            <li>
+                Visits counter
+                <ul>
+                    <li>
+                        Implement a session cookie to keep track of number of visits
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Public IP addtess display
+                <ul>
+                    <li>
+                        Use header information to extract public Ip
+                    </li>
+                    <li>
+                        Display public IP in the template layout
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Timezone display
+                <ul>
+                    <li>
+                        Use client side javascript to get the local browser timezone
+                    </li>
+                    <li>
+                        Display timezone data in layout
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </p>
+
+
+        <h3 id="part1-design">Design</h3>
+        <p>
+            A simple wireframe was sufficient to illustrate the general layout of the application (Fig1).
+        </p>
+        <div class="figure">
+            <img src="/shared/images/documentation/wireframe-part1.png" alt="er-diagram-bookmarks">
+            <span>Fig1: Wireframe for part1</span>
+        </div>
+
+        <h3 id="part1-implementation">Implementation</h3>
+        <p>
+            To implement the cookie counter in our application using set_cookie() method on django http response.
+            To implement the IP address information display I simply go through the http header and return the
+            appropriate information.
+            The following two functions used the previously two mentioned methods and routines to fetch the user ip and
+            create and alter the cookies.
+            <br>
+
+            <code>
+                def get_client_ip(request):
+                    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+                    if x_forwarded_for:
+                        ip = x_forwarded_for.split(',')[0]
+                    else:
+                        ip = request.META.get('REMOTE_ADDR')
+                    return ip
+
+                def handleVisit(request, ip):
+                    # Cookie logic
+                    visitCount = request.COOKIES.get('count')
+                    if visitCount is None:
+                        visitCount = 1
+                        response = render(request, 'part1/main.html', {"visitCount": visitCount, "clientIp": ip})
+                    else:
+                        visitCount = int(visitCount)
+                        visitCount += 1
+                        response = render(request, 'part1/main.html', {"visitCount": visitCount, "clientIp": ip})
+                    response.set_cookie('count', visitCount, max_age=None)
+
+            </code>
+            <br>
+            Lastly, the timezone was generated using client side javascript and inserted into the DOM.
+        </p>
+        <br>
+
+        <h3 id="part1-userguide">User Guide</h3>
+        <p>
+            Simple open the app through the appropriate URL. Verify your IP address through perhaps another online
+            source or through you network settings.
+            Verify your timezone information. Refresh the webpage to view the visit count going up.
+        </p>
+
+        <h3 id="part1-accesslink">Access Link</h3>
+        <p>
+            You may access the web app through <a
+                href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part1">here</a>
+        </p>
+        <a href="#infoHeader">Back To Top</a>
+        <hr>
+        <h1 id="part2">Part 2: Slideshow</h1>
+        <h3>Description</h3>
+        <p>
+            The objective of this app is to display an image carousel/slideshow containing 20 images.
+        </p>
+        <h3 id="part2-analysis">Analysis</h3>
+        <p>
+            Here's a break down and analysis of the project requirements: <br>
+        <ul>
+            <li>
+                Contains 20 images
+                <ul>
+                    <li>
+                        Obtain 20 images from assignment 1.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Slide show pause/play button
+                <ul>
+                    <li>
+                        Use pause and play icons to display button
+                    </li>
+                    <li>
+                        Implement toggle logic between pause and play through javascript
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Select between random or sequential view of the images
+                <ul>
+                    <li>
+                        Create dropdown to select random or sequential
+                    </li>
+                    <li>
+                        disable manual transition buttons
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Create manual transition buttons
+                <ul>
+                    <li>
+                        Use left or right arrows to show transition buttons
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </p>
+
+        <h3 id="part2-design">Design</h3>
+        <p>
+            A simple wireframe is very beneficial and practical in designing this simple web application. The following
+            wireframe was create to illustrate the layout of the slideshow app (Fig2):
+        </p>
+
+        <div class="figure">
+            <img src="/shared/images/documentation/part2-wireframe.png" alt="part2-wireframe">
+            <span>Fig2: Slideshow wireframe</span>
+        </div> <br>
+
+        <h3 id="part2-implementation">Implementation</h3>
+        <p>
+            Implementation wise this slideshow was very similar to the implementation done for assignment 1.
+            Except for loading the images by using information stored in a json file on the server side, which were
+            then rendered onto a template and served afterwards. On the client side, javascript was used to handle
+            changing between images and Math.random() was used to randomize the image transitions.
+        </p>
+
+        <h3 id="part2-userguide">User Guide</h3>
+        <p>
+            Simply load the page for the application. Use the left and right arrows to transition
+            back and forth between the images. You may play the slideshow using the play button.
+            You may change the order with the random/sequential dropdown. Note that the manual
+            transition buttons are disabled during random transitions.
+
+        </p>
+
+        <h3 id="part2-accesslink">Access Link</h3>
+        <p>
+            You may access the web app through <a
+                href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part2">here</a>
+        </p>
+        <a href="#infoHeader">Back To Top</a>
+        <hr>
+        <h1 id="part3">Part 3: digishop</h1>
+        <h3>Description</h3>
+        <p>
+            The objective of this app was to create an online computer shop with appropriate elements such as contacts,
+            feedback form and
+            a shopping cart/bag. This part did not include any database and the shopping item data was thus hardcoded.
+        </p>
+        <h3 id="part3-analysis">Analysis</h3>
+        <h4>Analysis of existing online stores</h4>
+        <p>
+            In my analysis I conducted a study of the popular online stores of <a
+                href="https://www.bestbuy.ca/en-ca">BestBuy</a> and <a href="https://www.apple.com/ca/">Apple</a>.
+            Both websites have a welcome page, with a welcome message and logo displayed. Each website showcase quick
+            access links to their latest and popular products.
+            The navbar I would say is the backbone of these websites. It integrates the different pages seemlessly
+            whilst maintaining consistency and showcasing the important
+            sections of the websites. The navbar also consists of search that indexes the website's products. There is
+            also quick access links to user login/profile and the shopping
+            bag/cart. I really drew inspiration of how apple show cases it's products and their specifications. It uses
+            long vertical cards that list all the key features of their computers.
+            You can then select your desired computare and go to a configuration page were you can replace the
+            configurable parts with more premium parts. The prices are also dynamically updated
+            based on the selected parts. This feature fits really well with the assignment description. Once the item is
+            configured you can add the item to a bag/cart. You can then view a summary
+            of your bag/cart and then proceed to checkout or place your order for your items. The user profile pages
+            store your basic information such as username and email and they also display
+            a histroy of your previous orders.
+        </p>
+        <hr>
+        <p>
+            Here's a break down and analysis of the project requirements: <br>
+        <ul>
+            <li>
+                The application running in a web browser should be like a real online store, with a name and logo,
+                menus and buttons for navigation, a welcome page to greet customers, and other pages,
+                such as contacts and a feedback form, and so on.
+                <ul>
+                    <li>
+                        Create an application logo and name
+                    </li>
+                    <li>
+                        Create a navbar for application that includes a searchbar
+                    </li>
+                    <li>
+                        Create a welcome page with greeting manage and quick access links
+                    </li>
+                    <li>
+                        Create contact page with social media links
+                    </li>
+                    <li>
+                        Create a feedback form with html form
+                    </li>
+                </ul>
+            </li>
+            <li>
+                There should be a list of computers, lists of different parts or components
+                (no less than five different components including at least RAM, hard drive, CPU, display, OS, and
+                soundcard)
+                of computers that can be reviewed by customers. At this stage, the information about these products can
+                be
+                hard coded into the HTML or program files.
+                <ul>
+                    <li>
+                        Create a desktops page for desktop computers
+                    </li>
+                    <li>
+                        Create a laptops page for laptop computers
+                    </li>
+                    <li>
+                        List hardware components for diffrent computer models (RAM, storage, CPU, display, OS, and
+                        soundcard)
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                A customer can select a computer with default/standard configuration and pricing,
+                and then customize it by changing its configuration, that is, by replacing one component
+                with another from a list of compatible components.
+                <ul>
+                    <li>
+                        Create cards for base models for desktops and laptops
+                    </li>
+                    <li>
+                        Create configurable toggle buttons to replace config parts
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Whenever a change has been made by the customer, the price total needs to be dynamically
+                changed and displayed to the customer, in an area embedded in the online store, not in a pop-up window.
+                <ul>
+                    <li>
+                        Implement subtotal calculator
+                    </li>
+                    <li>
+                        Implement event handlers to listen on config changes and update price accordingly
+                    </li>
+                </ul>
+            </li>
+            <li>
+                After the customer has hit the Buy or Add to Cart or something similar, a summary of selections,
+                including all the details of the customized computer and its pricing, should be displayed in the browser
+                window.
+                <ul>
+                    <li>
+                        Create add to bag button for adding item to shopping bag (inspired from Apple)
+                    </li>
+                    <li>
+                        Create bag summary page containing summary of information and price
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </p>
+
+        <h3 id="part3-design">Design</h3>
+        <p>
+            Taking inspiration from Apple and BestBuy as previously mentioned, the following wireframes
+            were created to illustrate the different pages for this part.
+        </p>
+
+        <div class="figure">
+            <img src="/shared/images/documentation/part3-wireframe-welcome.png" alt="part3-welcome">
+            <span>Fig3: Wireframe for welcome page</span>
+        </div> <br>
+        <div class="figure">
+            <img src="/shared/images/documentation/part3-wireframe-computers.png" alt="part3-computers">
+            <span>Fig4: Selection of computers with spec cards displayed</span>
+        </div> <br>
+        <div class="figure">
+            <img src="/shared/images/documentation/part3-wireframe-bag.png" alt="part3-bag">
+            <span>Fig5: Wireframe for bag</span>
+        </div> <br>
+        <div class="figure">
+            <img src="/shared/images/documentation/part3-wireframe-search.png" alt="part3-search">
+            <span>Fig6: Wireframe for search results</span>
+        </div> <br>
+
+        <p>
+            The following UML <a href="https://www.smartdraw.com/component-diagram/">component</a> diagram is designed
+            to illustrate the essential modules created
+            for this part to handle the application. Note that intuitive modules such as user registration
+            is omitted in this part since we don't have a database yet. This will obviosly be covered in part4.
+        </p>
+        <div class="figure">
+            <img src="/shared/images/documentation/part3-component-diagram.png" alt="part3-component">
+            <span>Fig7: Part 3 UML component diagram</span>
+        </div> <br>
+
+        <h3 id="part3-implementation">Implementation</h3>
+        <p>
+            The important parts to highlight regarding implementation are the storing of the computer item information
+            and the configurable parts information, the dynamic price calculation during configuration and the
+            implementation
+            of a clientside cookie to add items to a shopping bag.
+            To store the information I used a python dictionaries stored within an array.
+            A sample computer model dictionary data looks as follows:
+            <code>
+                {
+                    "model": "Model 1",
+                    "RAM": {"base": "8GB", "upgrades": [{"size": "16GB", "premium": "100"}]},
+                    "storage": {"base": "256GB", "upgrades": [{"size": "512GB", "premium": "200"}]},
+                    "CPU": {"base": "Intel Core i5", "upgrades": [{"type": "Intel Core i7", "premium": "200"}]},
+                    "display":"13\"",
+                    "OS":"Ubuntu",
+                    "soundcard":"yes",
+                    "price":"999"
+                }
+            </code>
+            <br>
+            The intention here was simplicity for later transferring the data into the database. Hence, complex fields
+            were used
+            for the configurable parts so that they can be directly used later on in a relational database.
+            For dynamic price calculation I used jquery to listen to clicks on configration buttons. Based on what
+            button is clicked
+            I would add the associated premium cost to an already stored base cost and consider that as the
+            configuration price.
+            For a better understanding you can take a look at the javascript code provided for this part under the
+            shared/ static
+            file directories.
+            <br>
+            Lastly, I implemented a client side cookie that would store a json string of all the items the customer has
+            added
+            to their bag. This cookies is created and handled using Javascript. This information can also be used by the
+            server
+            for later processing that would happen in part4. A js Cookie library was used to simplify the cookie method
+            calls.
+            Once again you may refer to the Javascript files for this part for more information and a transparent image.
+
+        </p>
+
+        <h3 id="part3-userguide">User Guide</h3>
+        <p>
+            You may shop for desktop computers or laptop computers. Once you select a model you desired,
+            you may configure the appropriate parts and review the price in real time. You may add
+            your desired item to the bag and review the bag content. The navbar contains a summary of
+            the important pages and a search bar. You can search for computers using the model name for simplicity.
+            For example you may look up "model 1".
+        </p>
+
+        <h3 id="part3-accesslink">Access Link</h3>
+        <p>
+            You may access the web app through <a
+                href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part3">here</a>
+        </p>
+        <a href="#infoHeader">Back To Top</a>
+
+        <hr>
+        <h1 id="part4">Part 4: digishop</h1>
+        <h3>Description</h3>
+        <p>
+            This part is essentially part3 with the addition of database to handle the shop data, user authentication,
+            and placing orders.
+        </p>
+        <h3 id="part4-analysis">Analysis</h3>
+
+        <p>
+            Here's a break down and analysis of the additional requirements for this part: <br>
+        <ul>
+            <li>
+                Add a customer management module to the online computer store,
+                which should include new customer registration, customer authentication,
+                and password recovery.
+                <ul>
+                    <li>
+                        Add login page
+                    </li>
+                    <li>
+                        Add registration page
+                    </li>
+                    <li>
+                        Add forgot password feature
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Add an order management module which will save orders for registered customers and
+                allow registered customers to manage their orders, including view the list and details
+                of each item in the list and delete or make changes to a selected order in the list.
+                <ul>
+                    <li>
+                        Add table to view order history
+                    </li>
+                    <li>
+                        Add ability to view order details
+                    </li>
+                    <li>
+                        Add ability to delete an order
+                    </li>
+                    <li>
+                        Add ability to edit and order
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Design and implement a back-end database to support your online computer store
+                <ul>
+                    <li>
+                        Store all the details of the computers and components and replace all
+                        the data hard coded into the program files with data from the database.
+                    </li>
+                    <li>
+                        Use the database for customer management.
+                    </li>
+                    <li>
+                        Use the database for all your order management.
+                        When an order is submitted, the details of the order, including pricing,
+                        need to be saved in the database, and then displayed in an appropriate format to the customer.
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+        </p>
+
+        <h3 id="part4-design">Design</h3>
+        <p>
+            The UI design for this part is identical to part3 and thus the wireframes there applies here as well.
+            To design the database solution I created the following entity relationship diagram.
+        </p>
+
+        <div class="figure">
+            <img src="/shared/images/documentation/part4-ER.png" alt="part4-ER">
+            <span>Fig8: Entity Relationship model for database</span>
+        </div> <br>
+        <p>
+            The complex fields illustrated here (double circles), represent JSON fields. We will discuss this 
+            more in the implementation. As previously discussed, we further complete the component diagram in this
+            part.
+        </p>
+        <div class="figure">
+            <img src="/shared/images/documentation/part4-component-diagram.png" alt="part4-ER">
+            <span>Fig9: Part4 component diagram </span>
+        </div> <br>
+
+        <h3 id="part4-implementation">Implementation</h3>
+        <p>
+            The most essential implementation phase in this part is the datbabase. 
+            Furtunately, django abstracts away the complexity of writing queries by providing
+            a database model application programming interface. This interface allows us to 
+            use python to model our tables. Consider the following implementation of the Orders 
+            table using python:
+            <code>
+                class Order(models.Model):
+                    user = models.ForeignKey(User, verbose_name = 'User', related_name='portfolios', on_delete=models.CASCADE)
+                    total = models.IntegerField()
+                    items = models.JSONField(null=True)
+                    time = models.DateTimeField(auto_now=True)
+            </code> <br>
+            As you can see this class specifies the fields in the table as well as a foreign key contraint relating an order item
+            to a user. JSONField is used to model our complex data fields as illustrated in our ER diagram.
+            For further information on the models created for this part, make sure to visit the models.py file to view the 
+            full list of database models created for this web app.
+            Lastly, I would like to mention "forgot password". To enable this feature through a secure email link, an SMTP server
+            was used through Gmail using a dummy organization account. Since this is a user account, it is asked that you do not
+            stress this feature since there's a limit on the free tier use of google's smtp server.
+
+        </p>
+
+        <h3 id="part4-userguide">User Guide</h3>
+        <p>
+            The use guide for this part is pretty much identical to part3. Except here, we have user registration, login,
+            and forgot password. To register, login or rest your password click on the user icon next to the bag icon
+            in the navbar. This will display a dropdown menu where you can select your desired action. 
+        </p>
+
+        <h3 id="part4-accesslink">Access Link</h3>
+        <p>
+            You may access the web app through <a
+                href="http://ec2-3-94-196-71.compute-1.amazonaws.com:8000/part4">here</a>
+        </p>
+        <a href="#infoHeader">Back To Top</a>
+    </div>
+
+</body>
+
+</html>

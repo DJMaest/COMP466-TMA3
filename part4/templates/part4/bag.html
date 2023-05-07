@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part4/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part4/navbar.html" %}
+    <section style="background-color: #662C91;" class="py-5 text-center">
+        <h1 class="text-light">Your Bag</h1>
+        <br>
+        <img class="banner-logo" src="/shared/images/part3/bag.png" alt="" width="150">
+    </section>
+    
+    <div style="margin-top:100px; margin-bottom: 100px;" class="container">
+
+        {% for item in items %}
+        {% if forloop.counter == 1 %}
+        <button id="placeOrder" style="margin-left: 10px;" class="btn btn-primary">Place Order</button> <span>Total: {{total}}$ ({{items|length}} items)</span>
+        {% endif %}
+        <div style="border:1px solid black; padding:5px; margin:5px;" class="row">
+            <div class="col-3">
+                {% if item.gpu %}
+                <img width="200" src="/shared/images/part3/assets/desktop.png" alt="desktop">
+                {% else %}
+                <img width="200" src="/shared/images/part3/assets/laptop.png" alt="laptop">
+                {% endif %}
+
+            </div>
+            <div class="col-6">
+                <h1>
+                    Item #{{forloop.counter}}
+                </h1>
+                <ul>
+                    <li>
+                        {{item.model}}
+                    </li>
+                    <li>
+                        {{item.ram}}
+                    </li>
+                    <li>
+                        {{item.cpu}}
+                    </li>
+                    <li>
+                        {{item.ssd}}
+                    </li>
+                    {% if item.gpu %}
+                    <li>
+                        {{item.gpu}}
+                    </li>
+                    {% endif %}
+                </ul>
+                <p>Price: {{item.price}}$</p>
+                <button id="remove-{{item.id}}" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part4/main.js' %}"></script>
+    <script src="{% static 'js/part4/bagHandler.js' %}"></script>
+</body>
+
+</html>

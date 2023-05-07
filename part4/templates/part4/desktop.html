@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part4/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part4/navbar.html" %}
+    <div style="margin-top:50px; height:700px; margin-bottom: 250px;" class="container">
+        <div class="row">
+            {% for desktop in desktops %}
+            <div class="col col-4">
+                <div class="card" style="width: 18rem; margin:auto;">
+                    <img height="200" src="/shared/images/part3/assets/desktop.png" class="card-img-top" alt="{{desktop.model}}">
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><b>{{desktop.model}}</b></h4>
+                        <hr>
+                        <h5>Display</h5>
+                        <p class="card-text">{{desktop.display}}</p>
+                        <hr>
+                        <h5>RAM</h5>
+                        <p class="card-text">{{desktop.ram.base}}</p>
+                        <hr>
+                        <h5>CPU</h5>
+                        <p class="card-text">{{desktop.cpu.base}}</p>
+                        <hr>
+                        <h5>GPU</h5>
+                        <p class="card-text">{{desktop.gpu.base}}</p>
+                        <hr>
+                        <h5>Operating system</h5>
+                        <p class="card-text">{{desktop.OS}}</p>
+                        <hr> 
+                        <h5>Soundcard</h5>
+                        <p class="card-text">✅ </p>
+                        
+                        <a href="{{desktop.model}}/" class="btn btn-primary" style="width:100%">Select</a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part4/main.js' %}"></script>
+</body>
+
+</html>

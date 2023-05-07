@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Cookies</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/part1">Cookies</a>
+        </div>
+    </nav>
+    <div class="card border-dark mb-3" style="margin:100px auto; max-width: 400px;">
+        <div class="card-header"> User Information </div>
+        <div class="card-body text-dark">
+            <h3><b>Your IP address:</b> {{clientIp}}</h3>
+            <h3><b>Your number of visits:</b> {{visitCount}}</h3>
+            <h3 id="timezone"></h3>
+        </div>
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part1/main.js' %}"></script>
+</body>
+
+</html>

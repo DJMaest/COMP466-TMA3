@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part4/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part4/navbar.html" %}
+    <div style="margin-top:50px; height:700px; margin-bottom: 200px;" class="container">
+        <div class="row">
+            <div class="col col-6">
+
+                <img src="/shared/images/part3/assets/laptop.png" class="card-img-top" alt="{{laptop.model}}">
+
+            </div>
+            <div class="col col-6">
+
+                <h1 data-value="{{laptop.model}}" id="model">Configure your laptop {{laptop.model}}</h1>
+                <p>{{laptop.display}} display</p>
+                <p>{{laptop.ram.base}} RAM</p>
+                <p>{{laptop.ssd.base}} SSD</p>
+                <p>{{laptop.cpu.base}}</p>
+                <p>{{laptop.OS}} Operating System</p>
+                <p>With active soundcard</p>
+                <h3>RAM</h3>
+                <button id="ramDefault" data-value="0" type="button"
+                    class="btn btn-outline-secondary ram-select config-btn disabled">{{laptop.ram.base}}</button>
+                {% for upgrade in laptop.ram.upgrades %}
+                <button data-value="{{upgrade.premium}}" type="button"
+                    class="btn btn-outline-secondary config-btn ram-select">{{upgrade.size}} +{{upgrade.premium}}$
+                </button>
+                {% endfor %}
+                <h3>SSD</h3>
+                <button id="ssdDefault" data-value="0" type="button"
+                    class="btn btn-outline-secondary ssd-select config-btn disabled">{{laptop.storage.base}}</button>
+                {% for upgrade in laptop.storage.upgrades %}
+                <button data-value="{{upgrade.premium}}" type="button"
+                    class="btn btn-outline-secondary config-btn ssd-select">{{upgrade.size}} +{{upgrade.premium}}$
+                </button>
+                {% endfor %}
+                <h3>CPU</h3>
+                <button id="cpuDefault" data-value="0" type="button"
+                    class="btn btn-outline-secondary disabled config-btn cpu-select">{{laptop.cpu.base}}</button>
+                {% for upgrade in laptop.cpu.upgrades %}
+                <button data-value="{{upgrade.premium}}" type="button"
+                    class="btn btn-outline-secondary config-btn cpu-select">{{upgrade.type}} +{{upgrade.premium}}$
+                </button>
+                {% endfor %}
+                <br>
+                <hr>
+                <div class="container">
+                    <button id="addToBag" type="button" class="btn btn-primary">Add to bag</button> <span
+                        data-value="{{laptop.price}}" id="totalPrice">Total: {{laptop.price}}$</span>
+                </div>
+            </div>
+        </div>
+        <div class="toast-container">
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                <div id="bagToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img width="36" src="/shared/images/part3/digishop-logo.png" class="rounded me-2"
+                            alt="shop logo">
+                        <strong class="me-auto">digistore</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Item added to bag.
+                        <a href="/part4/bag">View bag</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part4/main.js' %}"></script>
+    <script src="{% static 'js/part4/priceConfig.js' %}"></script>
+</body>
+
+</html>

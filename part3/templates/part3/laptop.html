@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part3/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part3/navbar.html" %}
+    <div style="margin-top:50px; height:700px; margin-bottom: 200px;" class="container">
+        <div class="row">
+            {% for laptop in laptops %}
+            <div class="col col-4">
+                <div class="card" style="width: 18rem; margin:auto;">
+                    <img height="200" src="/shared/images/part3/assets/laptop.png" class="card-img-top" alt="{{laptop.model}}">
+                    <div class="card-body text-center">
+                        <h4 class="card-title"><b>{{laptop.model}}</b></h4>
+                        <hr>
+                        <h5>Display</h5>
+                        <p class="card-text">{{laptop.display}}</p>
+                        <hr>
+                        <h5>RAM</h5>
+                        <p class="card-text">{{laptop.RAM.base}}</p>
+                        <hr>
+                        <h5>CPU</h5>
+                        <p class="card-text">{{laptop.CPU.base}}</p>
+                        <hr>
+                        <h5>Operating system</h5>
+                        <p class="card-text">{{laptop.OS}}</p>
+                        <hr>
+                        <h5>Soundcard</h5>
+                        <p class="card-text">✅ </p>
+                        
+                        <a href="{{laptop.model}}/" class="btn btn-primary" style="width:100%">Select</a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part3/main.js' %}"></script>
+</body>
+
+</html>

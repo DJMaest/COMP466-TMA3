@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part4/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part4/navbar.html" %}
+    <section style="background-color: #662C91;" class="py-5 text-center">
+        <h1 class="text-light">My Orders</h1>
+        <br>
+        <img class="banner-logo" src="/shared/images/part3/receipt.png" alt="" width="150">
+    </section>
+    {% if messages %}
+
+    {% for message in messages %}
+    <div style="margin: 10px 35%; z-index: 21;" id="processToast"
+        class="position-fixed start-6 top-0 toast align-items-center text-white bg-primary border-0" role="alert"
+        aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                {{message}}
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+
+    <div style="margin-top:100px; margin-bottom: 20px; background-color: white;" class="container">
+        <table style="width:100%">
+            <thead>
+                <th>
+                    Order #
+                </th>
+                <th>
+                    Total
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Actions
+                </th>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+
+                <tr>
+                    <td>
+                        {{forloop.counter}}
+                    </td>
+                    <td>
+                        {{order.total}}$
+                    </td>
+                    <td>
+                        {{order.time}}
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="/part4/order/{{order.id}}">View Details</a>
+                        <a class="btn btn-danger" href="/part4/delete-order/{{order.id}}">Cancel</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part4/main.js' %}"></script>
+</body>
+
+</html>

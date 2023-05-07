@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    {% include "part4/imports.html" %}
+    <title>digishop</title>
+</head>
+
+<body>
+    {% include "part4/navbar.html" %}
+    <section style="background-color: #662C91;" class="py-5 text-center">
+        
+        <h1 class="text-light">Order #{{order.id}} Details</h1>
+    </section>
+    <a style="margin:10px 0; margin-left:75px;" class="btn btn-primary" href="/part4/order-history">Back to orders</a>
+    <div style="margin-bottom:100px; background-color: white;" class="container">
+
+        <table style="width:100%">
+            <thead>
+                <th>
+                    Item #
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    RAM
+                </th>
+                <th>
+                    CPU
+                </th>
+                <th>
+                    GPU
+                </th>
+                <th>
+                    Storage
+                </th>
+                <th>
+                    Price
+                </th>
+            </thead>
+            <tbody>
+                {% for item in order.items %}
+
+                <tr>
+                    <td>
+                        {{forloop.counter}}
+                    </td>
+                    <td>
+                        {% if item.gpu %}
+                        Desktop
+                        {% else %}
+                        Laptop
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{item.model}}
+                    </td>
+                    <td>
+                        {{item.ram}}
+                    </td>
+                    <td>
+                        {{item.cpu}}
+                    </td>
+                    <td>
+                        {% if item.gpu %}
+                            {{item.gpu}}
+                        {% else %}
+                           N/A
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{item.ssd}}
+                    </td>
+                    <td>
+                        {{item.price}}$
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <th colspan="7">Total:</th>
+                <th>{{total}}$</th>
+            </tfoot>
+        </table>
+       
+    </div>
+
+    <div class="footer">
+        <br>
+        <p> &copy; Alireza Azimi 2022</p>
+    </div>
+    <script src="{% static 'js/part4/main.js' %}"></script>
+</body>
+
+</html>
